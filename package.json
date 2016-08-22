@@ -1,7 +1,7 @@
 {
   "name": "elastic-full-search",
   "description": "Functions to get full results from elasticsearch searches.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Alejandro Santiago Nieto",
   "license": "MIT",
   "dependencies": {

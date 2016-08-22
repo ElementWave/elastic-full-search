@@ -8,11 +8,15 @@ Functions to get full results from elasticsearch searches.
 npm install elastic-full-search
 ## Usage
 ```javascript
+const elasticsearch = require('elasticsearch');
+const elasticClient = new elasticsearch.Client({
+  host: 'localhost:9200',
+  log: 'warning'
+});
+
 const fullSearch = require('elastic-full-search').fullSearch;
 const fullSearchStream = require('elastic-full-search').fullSearchStream;
 
-// Should be a real elasticsearch.Client instance
-var elasticClient = null;
 var params = {
   index: 'myindex',
   type: 'mytype',
@@ -30,4 +34,9 @@ fullSearch(elasticClient, params, scroll, (err, docs) => {
 
 // Gets everything streamed through the readableStream.
 var readableStream = fullSearchStream(elasticClient, params, scroll);
+readableStream.on('data', (docs) => {
+  console.log('Streamed documents length: ' + docs.length);
+});
+readableStream.on('error', (err) => console.error(err));
+readableStream.on('end', () => console.log('Stream ended'));
 ```
