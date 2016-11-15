@@ -19,7 +19,6 @@
     "lib"
   ],
   "scripts": {
-    "start": "node index.js",
     "test": "mocha test/*.js",
     "jshint": "jshint index.js lib/*.js test/*.js",
     "jscs": "jscs index.js lib/*.js test/*.js",
