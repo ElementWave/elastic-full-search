@@ -5,6 +5,7 @@
   "author": "Alejandro Santiago Nieto",
   "license": "MIT",
   "dependencies": {
+    "fast-json": "1.x.x",
     "utjs": "2.x.x"
   },
   "devDependencies": {

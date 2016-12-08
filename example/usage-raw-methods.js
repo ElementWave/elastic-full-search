@@ -1,22 +1,22 @@
 'use strict';
 
-var Writable = require('stream').Writable;
-var elasticsearch = require('elasticsearch');
-var elasticClient = new elasticsearch.Client({
+const Writable = require('stream').Writable;
+const elasticsearch = require('elasticsearch');
+const elasticClient = new elasticsearch.Client({
   host: 'localhost:9200',
   log: 'warning'
 });
 
-var fullSearchRaw = require('../lib/fullSearchRaw');
-var fullSearchStreamRaw = require('../lib/fullSearchStreamRaw');
-var ElasticClientManager = require('../lib/ElasticClientManager');
+const fullSearchRaw = require('../lib/fullSearchRaw');
+const fullSearchStreamRaw = require('../lib/fullSearchStreamRaw');
+const ElasticClientManager = require('../lib/ElasticClientManager');
 
 // Responses will now be Strings instead of JSON objects
 ElasticClientManager.elasticClientToRawResponses(elasticClient);
 
 var params = {
-  index: 'speed-test',
-  type: 'dev',
+  index: 'myindex',
+  type: 'mytype',
   body: { query: { match_all: {} } },
   size: 250 // Max. documents per shard
 };
