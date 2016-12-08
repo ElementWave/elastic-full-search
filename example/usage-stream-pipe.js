@@ -1,7 +1,6 @@
 'use strict';
 
 const Writable = require('stream').Writable;
-
 const elasticsearch = require('elasticsearch');
 const elasticClient = new elasticsearch.Client({
   host: 'localhost:9200',
