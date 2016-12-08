@@ -6,7 +6,7 @@ Functions to get full results from elasticsearch searches.
 * **searchFullRaw**: Returns the full result as a string (no JSON.parse() inside) in a single callback.
 * **searchFullStreamRaw**: Returns a stream.Readable instance in **buffer mode** (no JSON.parse() inside) connected to the full result.
 
->> In order to use *searchFullRaw* and *searchFullStreamRaw*, the elasticsearch client need to be modified as explain in the secction *raw methods*.
+> In order to use *searchFullRaw* and *searchFullStreamRaw*, the elasticsearch client need to be modified as explain in the secction *raw methods*.
 
 ## Install
 npm install elastic-full-search
@@ -47,7 +47,7 @@ readableStream.on('end', () => console.log('Stream ended'));
 ```
 
 ## Raw methods
-With a small change in the elasticsearch client using reflection, we can get adventage of a better performance removing unnecessaries *JSON.parse()* calls and using streams in **buffer mode** (the default stream mode).
+With a small change in the elasticsearch client using reflection, we can get adventage of a better performance and throughput removing unnecessaries *JSON.parse()* calls and using streams in **buffer mode** (the default stream mode).
 
 ## Usage
 ```javascript
