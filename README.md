@@ -1,10 +1,10 @@
 elastic-full-search
 ===
 Functions to get full results from elasticsearch searches.
-* **searchFull**: Returns the full result as an array in a single callback.
-* **searchFullStream**: Returns a stream.Readable instance in **object mode** connected to the full result.
-* **searchFullRaw**: Returns the full result as a string (no JSON.parse() inside) in a single callback.
-* **searchFullStreamRaw**: Returns a stream.Readable instance in **buffer mode** (no JSON.parse() inside) connected to the full result.
+* **fullSearch**: Returns the full result as an array in a single callback.
+* **fullSearchStream**: Returns a stream.Readable instance in **object mode** connected to the full result.
+* **fullSearchRaw**: Returns the full result as a string (no JSON.parse() inside) in a single callback.
+* **fullSearchStreamRaw**: Returns a stream.Readable instance in **buffer mode** (no JSON.parse() inside) connected to the full result.
 
 > In order to use *searchFullRaw* and *searchFullStreamRaw*, the elasticsearch client need to be modified as explain in the secction *raw methods*.
 
